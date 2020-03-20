@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "deezerdb-eb360": {
+      "hosting": {
+        "deezerapp": [
+          "deezerdb-eb360"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "deezerdb-eb360"
+  }
+}
