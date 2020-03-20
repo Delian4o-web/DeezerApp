@@ -1,6 +1,6 @@
 jobs:
   build_test:
-    working_directory: ~/DeezerApp
+    working_directory: ~/deezerapp
     docker:
       - image: circleci/node:12.9.1-browsers
     steps:
