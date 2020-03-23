@@ -13,7 +13,7 @@ export class ArtistsService {
 
   getArtists(query?: string): Observable<Artist> {
     return this.http.get<Artist>(
-      `${environment.apiUri}/api/artist/${query ? "?${query}" : ""}`
+      `${environment.apiUri}/search/artist${query ? "?q=${query}" : ""}`
     );
   }
 }

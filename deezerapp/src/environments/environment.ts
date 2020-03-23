@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUri: "https://developers.deezer.com/api/"
+  apiUri: "https://api.deezer.com"
 };
 
 /*
