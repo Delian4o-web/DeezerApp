@@ -11,9 +11,7 @@ import { InjectableCompiler } from "@angular/compiler/src/injectable_compiler";
 export class ArtistsService {
   constructor(private http: HttpClient) {}
 
-  getArtists(query?: string): Observable<Artist> {
-    return this.http.get<Artist>(
-      `${environment.apiUri}/search/artist${query ? "?q=${query}" : ""}`
-    );
+  getArtists(query?: number): Observable<Artist> {
+    return this.http.get<Artist>(`${environment.apiUri}/artist/${query}`);
   }
 }

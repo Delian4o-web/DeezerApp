@@ -4,11 +4,11 @@ import { NgModule } from "@angular/core";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { HeaderComponent } from "./header/header.component";
-import { ArtistsComponent } from "./artists/artists.component";
 import { HttpClientModule } from "@angular/common/http";
+import { ArtistSearchComponent } from "./artist-search/artist-search.component";
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, ArtistsComponent],
+  declarations: [AppComponent, HeaderComponent, ArtistSearchComponent],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]
