@@ -1,6 +1,27 @@
-<p>{{ artistId }}</p>
-<p>{{ artist.name }}</p>
-
 <div *ngFor="let track of tracks">
   <h2>{{ track.title }}</h2>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div
+      class="col-sm-6"
+      style="background-color:white; border: 1px solid black"
+    >
+      <h1 class="display-6">{{ artist.name }}</h1>
+      <u
+        ><p class="lead">{{ artist.nb_fan }} fans</p></u
+      >
+    </div>
+    <div
+      class="col-sm-6"
+      style="background-color:white; border: 1px solid black"
+    >
+      <h1 class="display-6">Top Tracks</h1>
+      <br />
+      <div *ngFor="let track of tracks">
+        <h2>{{ track.title }}</h2>
+      </div>
+    </div>
+  </div>
 </div>
