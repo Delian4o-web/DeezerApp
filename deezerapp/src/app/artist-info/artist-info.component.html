@@ -24,13 +24,25 @@
       </div>
     </div>
   </div>
-</div>
 
-
-
-<div *ngIf="albumlist">
-  <div *ngFor="let album of albumlist">
-    <h2>{{ album.title }}</h2>
-    <img src="{{ album.cover_small }}" />
+  <div>
+    <div class="card-deck" *ngIf="albumlist">
+      <div class="card" *ngFor="let album of albumlist">
+        <a>
+          <img
+            class="card-img-top"
+            src="{{ album.cover_medium }}"
+            alt="Card image cap"
+          />
+        </a>
+        <div class="card-block">
+          <a
+            ><h4 class="card-title">{{ album.title }}</h4></a
+          >
+          <p class="card-text lead">{{ album.release_date }}</p>
+        </div>
+        <hr />
+      </div>
+    </div>
   </div>
 </div>
