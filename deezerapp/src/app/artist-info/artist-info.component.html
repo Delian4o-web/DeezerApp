@@ -1,11 +1,6 @@
-<p>artist-info works!</p>
+<p>{{ artistId }}</p>
+<p>{{ artist.name }}</p>
 
-<h1>Artist Name</h1>
-<h2>Top Tracks</h2>
-<ul>
-  <li>1.</li>
-  <li>1.</li>
-  <li>1.</li>
-  <li>1.</li>
-  <li>1.</li>
-</ul>
+<div *ngFor="let track of tracks">
+  <h2>{{ track.title }}</h2>
+</div>

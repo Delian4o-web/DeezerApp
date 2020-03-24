@@ -2,7 +2,7 @@
   <div class="row">
     <div class="card-deck">
       <div class="card" *ngFor="let artist of artists">
-        <a>
+        <a [routerLink]="['/artist/', artist.id]">
           <img
             class="card-img-top"
             src="{{ artist.picture_medium }}"
@@ -10,7 +10,7 @@
           />
         </a>
         <div class="card-block">
-          <a href="#" routerLink="/artist"
+          <a [routerLink]="['/artist/', artist.id]"
             ><h4 class="card-title">{{ artist.name }}</h4></a
           >
           <p class="card-text">Number of fans : {{ artist.nb_fan }}</p>

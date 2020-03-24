@@ -18,6 +18,4 @@ export class ArtistsService {
   searchArtists(term: string): Observable<Artist[]> {
     return this.http.get<Artist[]>(`${environment.apiUri}/search?q=${term}`);
   }
-
-  
 }
