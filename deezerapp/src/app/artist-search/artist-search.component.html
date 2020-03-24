@@ -2,11 +2,13 @@
   <div class="row">
     <div class="card-deck">
       <div class="card" *ngFor="let artist of artists">
-        <img
-          class="card-img-top"
-          src="{{ artist.picture_medium }}"
-          alt="Card image cap"
-        />
+        <a>
+          <img
+            class="card-img-top"
+            src="{{ artist.picture_medium }}"
+            alt="Card image cap"
+          />
+        </a>
         <div class="card-block">
           <a href="#" routerLink="/artist"
             ><h4 class="card-title">{{ artist.name }}</h4></a

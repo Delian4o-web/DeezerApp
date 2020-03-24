@@ -6,10 +6,16 @@ import { AppComponent } from "./app.component";
 import { HeaderComponent } from "./header/header.component";
 import { HttpClientModule } from "@angular/common/http";
 import { ArtistSearchComponent } from "./artist-search/artist-search.component";
-import { ArtistInfoComponent } from './artist-info/artist-info.component';
+import { ArtistInfoComponent } from "./artist-info/artist-info.component";
+import { RouterModule } from "@angular/router";
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, ArtistSearchComponent, ArtistInfoComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    ArtistSearchComponent,
+    ArtistInfoComponent
+  ],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]
