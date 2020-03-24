@@ -25,3 +25,12 @@
     </div>
   </div>
 </div>
+
+
+
+<div *ngIf="albumlist">
+  <div *ngFor="let album of albumlist">
+    <h2>{{ album.title }}</h2>
+    <img src="{{ album.cover_small }}" />
+  </div>
+</div>

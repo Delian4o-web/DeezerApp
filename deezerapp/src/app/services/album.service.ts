@@ -3,6 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { Tracklist } from "../models/tracklist";
 import { Observable } from "rxjs";
 import { environment } from "src/environments/environment";
+import { Albums } from "../models/albums";
 
 @Injectable({
   providedIn: "root"
@@ -10,9 +11,9 @@ import { environment } from "src/environments/environment";
 export class AlbumService {
   constructor(private http: HttpClient) {}
 
-  // getTrackList(artistID?: number): Observable<Tracklist> {
-  //   return this.http.get<Tracklist>(
-  //     `${environment.apiUri}/artist/${artistID}/top/limit=5`
-  //   );
-  // }
+  getAlbumlist(artistID?: number): Observable<Albums> {
+    return this.http.get<Albums>(
+      `${environment.apiUri}/artist/${artistID}/albums`
+    );
+  }
 }
