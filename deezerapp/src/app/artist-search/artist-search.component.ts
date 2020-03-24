@@ -9,8 +9,20 @@ import { Artist } from "../models/artist";
   styleUrls: ["./artist-search.component.css"]
 })
 export class ArtistSearchComponent implements OnInit {
-  @Input() artist: Artist;
-  constructor() {}
+  artists: Artist[] = new Array();
+  artist: Artist;
+  artistList: Artists;
 
-  ngOnInit(): void {}
+  constructor(private artistService: ArtistsService) {}
+
+  ngOnInit(): void {
+    this.artistList = new Artists();
+    for (let artistNo = 2; artistNo <= 10; artistNo++) {
+      this.artistService.getArtists(artistNo).subscribe(x => {
+        this.artist = x;
+        this.artists.push(this.artist);
+      });
+    }
+    this.artistList.results = this.artists;
+  }
 }
