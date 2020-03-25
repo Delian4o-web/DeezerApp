@@ -11,6 +11,10 @@ body {
   margin: 0 0 1rem;
 }
 
+img {
+  border-radius: 6%;
+}
+
 @media (min-width: 576px) and (max-width: 767.98px) {
   .card-deck .card {
     -ms-flex: 0 0 48.7%;
