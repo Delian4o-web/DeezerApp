@@ -8,8 +8,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { ArtistSearchComponent } from "./artist-search/artist-search.component";
 import { ArtistInfoComponent } from "./artist-info/artist-info.component";
 import { RouterModule } from "@angular/router";
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
+import { environment } from "../environments/environment";
 
 @NgModule({
   declarations: [
@@ -18,7 +17,7 @@ import { environment } from '../environments/environment';
     ArtistSearchComponent,
     ArtistInfoComponent
   ],
-  imports: [BrowserModule, HttpClientModule, AppRoutingModule, ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })],
+  imports: [BrowserModule, HttpClientModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]
 })
