@@ -1,52 +1,21 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="card-deck">
-      <div class="card" *ngFor="let artist of artists">
-        <a [routerLink]="['/artist/', artist.id]">
-          <img
-            class="card-img-top"
-            src="{{ artist.picture_medium }}"
-            alt="Card image cap"
-          />
-        </a>
-        <div class="card-block">
+<div class="container">
+  <div class="card-deck">
+    <div class="card" *ngFor="let artist of artists">
+      <a [routerLink]="['/artist/', artist.id]">
+        <img
+          class="card-img-top"
+          src="{{ artist.picture_medium }}"
+          alt="Card image cap"
+        />
+      </a>
+      <div class="card-body">
+        <h5 class="card-title">
           <a [routerLink]="['/artist/', artist.id]"
             ><h4 class="card-title">{{ artist.name }}</h4></a
           >
-          <p class="card-text">Number of fans : {{ artist.nb_fan }}</p>
-        </div>
-        <hr />
+        </h5>
+        <p class="card-text">Number of fans : {{ artist.nb_fan }}</p>
       </div>
     </div>
   </div>
 </div>
-
-<!-- <section class="wrapper-fostrap">
-  <div class="container-fostrap">
-    <div class="content">
-      <div class="container">
-        <div class="row">
-          <div
-            class="col-xs-12 col-sm-4"
-            style="  display: flex;
-          flex-wrap: wrap;"
-          >
-            <div class="card" *ngFor="let artist of artists">
-              <a [routerLink]="['/artist/', artist.id]" class="img-card">
-                <img src="{{ artist.picture_medium }}" />
-              </a>
-              <div class="card-content">
-                <h4 class="card-title">
-                  <a [routerLink]="['/artist/', artist.id]">
-                    {{ artist.name }}</a
-                  >
-                </h4>
-                <p class="">Number of fans : {{ artist.nb_fan }}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
