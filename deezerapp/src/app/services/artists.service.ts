@@ -4,6 +4,7 @@ import { of, Observable } from "rxjs";
 import { environment } from "src/environments/environment";
 import { Artist } from "../models/artist";
 import { InjectableCompiler } from "@angular/compiler/src/injectable_compiler";
+import { tap, catchError } from "rxjs/operators";
 
 @Injectable({
   providedIn: "root"
@@ -16,6 +17,8 @@ export class ArtistsService {
   }
 
   searchArtists(term: string): Observable<Artist[]> {
-    return this.http.get<Artist[]>(`${environment.apiUri}/search?q=${term}`);
+    return this.http
+      .get<Artist[]>(`${environment.apiUri}/search?q=${term}`)
+      .pipe(catchError(err => of([])));
   }
 }
