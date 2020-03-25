@@ -15,13 +15,19 @@
     >
       <h1 class="display-6">Top Tracks</h1>
       <br />
-      <div *ngFor="let track of tracks">
-        <h2>{{ track.rank }} {{ track.title }}</h2>
+      <div *ngIf="tracks">
+        <div *ngFor="let track of tracks">
+          <h2>{{ track.title }}</h2>
+          <br />
+        </div>
       </div>
     </div>
   </div>
 
   <div class="container">
+    <h1 class="display-3">Albums</h1>
+    <hr />
+    <br />
     <div class="card-deck" *ngIf="albumlist">
       <div class="card" *ngFor="let album of albumlist">
         <a>
@@ -35,7 +41,7 @@
           <h5 class="card-title">
             <h4 class="card-title">{{ album.title }}</h4>
           </h5>
-          <p class="card-text">{{ album.release_date }}</p>
+          <p class="card-text">{{ album.release_date | date: "yyyy" }}</p>
         </div>
       </div>
     </div>
