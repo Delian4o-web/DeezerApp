@@ -11,8 +11,13 @@ export class TracklistService {
   constructor(private http: HttpClient) {}
 
   getTrackList(artistID?: number): Observable<Tracklist> {
+    console.log(
+      this.http.get<Tracklist>(
+        `${environment.apiUri}/artist/${artistID}/top?limit=5`
+      )
+    );
     return this.http.get<Tracklist>(
-      `${environment.apiUri}/artist/${artistID}/top/limit=5`
+      `${environment.apiUri}/artist/${artistID}/top?limit=5`
     );
   }
 }
