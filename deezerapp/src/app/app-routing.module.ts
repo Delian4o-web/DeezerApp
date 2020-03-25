@@ -5,7 +5,8 @@ import { ArtistSearchComponent } from "./artist-search/artist-search.component";
 
 const routes: Routes = [
   { path: "", component: ArtistSearchComponent },
-  { path: "artist/:id", component: ArtistInfoComponent }
+  { path: "artist/:id", component: ArtistInfoComponent },
+  { path: "search/:name", component: ArtistSearchComponent }
 ];
 
 @NgModule({
@@ -13,4 +14,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
-//{ path: "artist", component: ArtistInfoComponent }

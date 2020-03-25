@@ -3,6 +3,7 @@ import { ArtistsService } from "../services/artists.service";
 import { Artists } from "../models/artists";
 import { Artist } from "../models/artist";
 import { randomInt } from "./randomNum";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "app-artist-search",
