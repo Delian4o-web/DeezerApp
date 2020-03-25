@@ -21,7 +21,7 @@
     </div>
   </div>
 
-  <div>
+  <div class="container">
     <div class="card-deck" *ngIf="albumlist">
       <div class="card" *ngFor="let album of albumlist">
         <a>
@@ -31,13 +31,14 @@
             alt="Card image cap"
           />
         </a>
-        <div class="card-block">
-          <a
-            ><h4 class="card-title">{{ album.title }}</h4></a
-          >
-          <p class="card-text lead">{{ album.release_date }}</p>
+        <div class="card-body">
+          <h5 class="card-title">
+            <a [routerLink]="['/artist/', artist.id]"
+              ><h4 class="card-title">{{ album.title }}</h4></a
+            >
+          </h5>
+          <p class="card-text">{{ album.release_date }}</p>
         </div>
-        <hr />
       </div>
     </div>
   </div>
