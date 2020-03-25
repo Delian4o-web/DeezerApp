@@ -13,7 +13,7 @@ import { Artists } from "../models/artists";
 export class HeaderComponent implements OnInit {
   private searchTerms = new Subject<string>();
 
-  constructor(private artistService: ArtistsService) {}
+  constructor() {}
 
   ngOnInit(): void {}
 }
