@@ -9,7 +9,7 @@ import { ArtistSearchComponent } from "./artist-search/artist-search.component";
 import { ArtistInfoComponent } from "./artist-info/artist-info.component";
 import { RouterModule } from "@angular/router";
 import { environment } from "../environments/environment";
-import { ArtistSearchedComponent } from './artist-searched/artist-searched.component';
+import { ArtistSearchedComponent } from "./artist-searched/artist-searched.component";
 
 @NgModule({
   declarations: [
