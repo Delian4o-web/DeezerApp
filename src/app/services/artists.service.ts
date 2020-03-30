@@ -1,10 +1,9 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { of, Observable } from "rxjs";
+import { of, Observable, range } from "rxjs";
 import { environment } from "src/environments/environment";
 import { Artist } from "../models/artist";
 import { InjectableCompiler } from "@angular/compiler/src/injectable_compiler";
-import { tap, catchError } from "rxjs/operators";
 
 @Injectable({
   providedIn: "root"
