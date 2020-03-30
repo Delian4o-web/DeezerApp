@@ -4,6 +4,7 @@ import { Artists } from "../models/artists";
 import { Artist } from "../models/artist";
 import { randomInt } from "./randomNum";
 import { ActivatedRoute } from "@angular/router";
+import { ThousandSuffPipe } from "../pipes/thousand-suff.pipe";
 
 @Component({
   selector: "app-artist-search",

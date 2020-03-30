@@ -10,6 +10,7 @@ import { Albums } from "../models/albums";
 import { Album } from "../models/album";
 import { AlbumService } from "../services/album.service";
 import { Pipe, PipeTransform } from "@angular/core";
+import { ThousandSuffPipe } from "../pipes/thousand-suff.pipe";
 
 @Component({
   selector: "app-artist-info",
