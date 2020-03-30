@@ -17,8 +17,11 @@
       <h1 class="display-6">Top Tracks</h1>
       <br />
       <div *ngIf="tracks">
-        <div *ngFor="let track of tracks">
-          <h2>{{ track.title }}</h2>
+        <div *ngFor="let tracks of tracks">
+          <li>
+            {{ tracks.title }}
+          </li>
+
           <br />
         </div>
       </div>
