@@ -16,8 +16,8 @@ export class ArtistsService {
     return this.http.get<Artist>(`${environment.apiUri}/artist/${query}`);
   }
 
-  searchArtists(term?: string): Observable<Artist> {
-    return this.http.get<Artist>(
+  searchArtists(term?: string): Observable<Artist[]> {
+    return this.http.get<Artist[]>(
       `${environment.apiUri}/search/artist?q=${term}`
     );
   }
