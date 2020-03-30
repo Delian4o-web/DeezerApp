@@ -9,13 +9,15 @@ import { ArtistSearchComponent } from "./artist-search/artist-search.component";
 import { ArtistInfoComponent } from "./artist-info/artist-info.component";
 import { RouterModule } from "@angular/router";
 import { environment } from "../environments/environment";
+import { ShortNumberPipe } from './pipes/short-number.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     ArtistSearchComponent,
-    ArtistInfoComponent
+    ArtistInfoComponent,
+    ShortNumberPipe
   ],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule],
   providers: [],
