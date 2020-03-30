@@ -1,6 +1,7 @@
 {
   "extends": "tslint:recommended",
   "rules": {
+    "variable-name": [true, "check-format", "allow-snake-case"],
     "array-type": false,
     "arrow-parens": false,
     "deprecation": {
@@ -38,7 +39,7 @@
     "object-literal-key-quotes": [true, "as-needed"],
     "object-literal-sort-keys": false,
     "ordered-imports": false,
-    "quotemark": [true, "double"],
+    "quotemark": [true, "single"],
     "trailing-comma": false,
     "no-conflicting-lifecycle": true,
     "no-host-metadata-property": true,
