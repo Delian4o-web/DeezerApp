@@ -40,8 +40,7 @@ export class ArtistInfoComponent implements OnInit {
     });
 
     this.tracklistService.getTrackList(this.artistId).subscribe(x => {
-      this.tracklist = x;
-      this.tracks = this.tracklist.tracks;
+      this.tracks = x;
     });
 
     this.albumService.getAlbumlist(this.artistId).subscribe(x => {

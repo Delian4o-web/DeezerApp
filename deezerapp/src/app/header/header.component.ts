@@ -11,8 +11,6 @@ import { Artists } from "../models/artists";
   styleUrls: ["./header.component.css"]
 })
 export class HeaderComponent implements OnInit {
-  private searchTerms = new Subject<string>();
-
   constructor() {}
 
   ngOnInit(): void {}
