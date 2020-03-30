@@ -18,7 +18,6 @@ import { Pipe, PipeTransform } from "@angular/core";
 })
 export class ArtistInfoComponent implements OnInit {
   artistId: number;
-  artistName: string;
   artist: Artist;
   tracklist: Tracklist;
   tracks: Track[];
@@ -41,6 +40,8 @@ export class ArtistInfoComponent implements OnInit {
 
     this.tracklistService.getTrackList(this.artistId).subscribe(x => {
       this.tracks = x;
+
+      console.log(this.tracks);
     });
 
     this.albumService.getAlbumlist(this.artistId).subscribe(x => {
