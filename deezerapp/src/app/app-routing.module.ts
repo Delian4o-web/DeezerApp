@@ -6,9 +6,9 @@ import { ArtistSearchedComponent } from "./artist-searched/artist-searched.compo
 
 const routes: Routes = [
   { path: "", component: ArtistSearchComponent },
-  { path: "**", redirectTo: "", pathMatch: "full" },
   { path: "artist/:id", component: ArtistInfoComponent },
-  { path: "search/:name", component: ArtistSearchedComponent }
+  { path: "search/:name", component: ArtistSearchedComponent },
+  { path: "**", component: ArtistSearchComponent }
 ];
 
 @NgModule({
