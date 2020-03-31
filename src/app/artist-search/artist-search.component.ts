@@ -12,25 +12,20 @@ import { ThousandSuffPipe } from "../pipes/thousand-suff.pipe";
   styleUrls: ["./artist-search.component.css"]
 })
 export class ArtistSearchComponent implements OnInit {
-  artists: Artist[] = new Array();
-  artist: Artist;
-  artistList: Artists;
+  artists: Artist[] = [];
   rndNumber = randomInt(3, 1000);
 
   constructor(private artistService: ArtistsService) {}
 
   ngOnInit(): void {
-    this.artistList = new Artists();
     for (
       let artistNo = this.rndNumber - 20;
       artistNo <= this.rndNumber;
       artistNo++
     ) {
       this.artistService.getArtists(artistNo).subscribe(x => {
-        this.artist = x;
-        this.artists.push(this.artist);
+        this.artists.push(x);
       });
     }
-    this.artistList.results = this.artists;
   }
 }
