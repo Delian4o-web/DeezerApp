@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Output, Input } from "@angular/core";
 import { Artist } from "../models/artist";
 import { ActivatedRoute } from "@angular/router";
 import { ArtistsService } from "../services/artists.service";
@@ -11,6 +11,7 @@ import { Album } from "../models/album";
 import { AlbumService } from "../services/album.service";
 import { Pipe, PipeTransform } from "@angular/core";
 import { ThousandSuffPipe } from "../pipes/thousand-suff.pipe";
+import { Location } from "@angular/common";
 
 @Component({
   selector: "app-artist-info",
@@ -29,7 +30,8 @@ export class ArtistInfoComponent implements OnInit {
     private actRoute: ActivatedRoute,
     private artistService: ArtistsService,
     private tracklistService: TracklistService,
-    private albumService: AlbumService
+    private albumService: AlbumService,
+    private location: Location
   ) {
     this.artistId = this.actRoute.snapshot.params.id;
   }
@@ -41,7 +43,6 @@ export class ArtistInfoComponent implements OnInit {
 
     this.tracklistService.getTrackList(this.artistId).subscribe(x => {
       this.tracks = x;
-
       console.log(this.tracks);
     });
 
@@ -49,5 +50,9 @@ export class ArtistInfoComponent implements OnInit {
       this.albums = x;
       this.albumlist = this.albums.data;
     });
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 }
