@@ -5,6 +5,32 @@
   crossorigin="anonymous"
 />
 
+<form class="mx-2 my-auto d-inline w-100">
+  <input
+    type="text"
+    class="form-control border border-right-5 inputSearch "
+    placeholder="Search for an artist..."
+    #searchBox
+    id="search-box"
+    (input)="search(searchBox.value)"
+  />
+
+  <div>
+    <ul class="search-result">
+      <li *ngFor="let artist of artists$ | async">
+        <img
+          class="img-fluid img-rounded searchImage"
+          src="{{ artist.picture_small }}"
+          alt=""
+        />
+        <a routerLink="/artist/{{ artist.id }}">
+          {{ artist.name }}
+        </a>
+      </li>
+    </ul>
+  </div>
+</form>
+
 <div class="container">
   <div class="card-deck">
     <div class="card" *ngFor="let artist of artists">
