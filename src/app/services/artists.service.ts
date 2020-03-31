@@ -4,7 +4,7 @@ import { of, Observable, range } from "rxjs";
 import { environment } from "src/environments/environment";
 import { Artist } from "../models/artist";
 import { InjectableCompiler } from "@angular/compiler/src/injectable_compiler";
-import { tap, catchError, map } from "rxjs/operators";
+import { tap, catchError, map, mergeAll, toArray } from "rxjs/operators";
 import { Artists } from "../models/artists";
 
 @Injectable({
@@ -17,9 +17,15 @@ export class ArtistsService {
     return this.http.get<Artist>(`${environment.apiUri}/artist/${query}`);
   }
 
-  searchArtists(term?: string): Observable<Artist[]> {
-    console.log("Search Item : " + `${term}`);
+  // getArtists(min: number, top: number): Observable<Artist[]> {
+  //   return range(min, top).pipe(
+  //     map(x => this.getArtist(x)),
+  //     mergeAll(),
+  //     toArray()
+  //   );
+  // }
 
+  searchArtists(term?: string): Observable<Artist[]> {
     return this.http
       .get<any>(`${environment.apiUri}/search/artist?q=${term}`)
       .pipe(map(x => x.data));
