@@ -11,6 +11,7 @@ import { Album } from "../models/album";
 import { AlbumService } from "../services/album.service";
 import { Pipe, PipeTransform } from "@angular/core";
 import { ThousandSuffPipe } from "../pipes/thousand-suff.pipe";
+import { MinuteSecondsPipe } from "../pipes/minute-seconds.pipe";
 import { Location } from "@angular/common";
 
 @Component({
