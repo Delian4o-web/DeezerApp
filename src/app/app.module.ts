@@ -10,6 +10,7 @@ import { ArtistInfoComponent } from "./artist-info/artist-info.component";
 import { RouterModule } from "@angular/router";
 import { environment } from "../environments/environment";
 import { ThousandSuffPipe } from "../app/pipes/thousand-suff.pipe";
+import { MinuteSecondsPipe } from "../app/pipes/minute-seconds.pipe";
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ThousandSuffPipe } from "../app/pipes/thousand-suff.pipe";
     HeaderComponent,
     ArtistSearchComponent,
     ArtistInfoComponent,
-    ThousandSuffPipe
+    ThousandSuffPipe,
+    MinuteSecondsPipe
   ],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule],
   providers: [],
