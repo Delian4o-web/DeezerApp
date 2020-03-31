@@ -38,7 +38,18 @@ body {
   cursor: pointer;
 }
 
-/* Darker background on mouse-over */
+.artistInfo {
+  border: 1px solid white;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  filter: grayscale(100%);
+  color: white;
+}
+
+.tracksInfo {
+  text-align: center;
+}
+
 .btn:hover {
   background-color: #0e606d;
 }
