@@ -1,30 +1,35 @@
 <div class="container">
+  <button (click)="goBack()" class="btn">
+    <i class="fa fa-home"></i> Home
+  </button>
   <div class="row">
     <div class="col-sm-6" style="border: 1px solid white ;">
-      <h1 class="display-3">{{ artist.name }}</h1>
-      <hr />
-      <u
-        ><h3 class="">{{ artist.nb_fan | thousandSuff }} fans</h3></u
-      ><br />
-      <img
-        class="img-responsive img-thumbnail"
-        src="{{ artist.picture_medium }}"
-        alt=""
-        style="border-radius: 10%;"
-      />
+      <ng-container *ngIf="artist">
+        <h1 class="display-3">{{ artist.name }}</h1>
+        <hr />
+        <u
+          ><h3 class="">{{ artist.nb_fan | thousandSuff }} fans</h3></u
+        ><br />
+        <img
+          class="img-responsive img-thumbnail"
+          src="{{ artist.picture_medium }}"
+          alt=""
+          style="border-radius: 10%;"
+        />
+      </ng-container>
     </div>
+
     <div class="col-sm-6" style="border: 1px solid white">
       <h1 class="display-6">Top Tracks</h1>
       <br />
-      <div *ngIf="tracks">
+      <ng-container *ngIf="tracks">
         <div *ngFor="let track of tracks">
-          <li>
+          <h3>
             {{ track.title }}
-          </li>
-
-          <br />
+          </h3>
         </div>
-      </div>
+        <br />
+      </ng-container>
     </div>
   </div>
   <hr />
@@ -44,7 +49,11 @@
         </a>
         <div class="card-body">
           <h5 class="card-title">
-            <h4 class="card-title">{{ album.title }}</h4>
+            <a>
+              <h4 class="card-title">
+                {{ album.title }}
+              </h4>
+            </a>
           </h5>
           <p class="card-text">{{ album.release_date | date: "yyyy" }}</p>
         </div>
