@@ -6,6 +6,7 @@ import { ArtistSearchComponent } from "./artist-search/artist-search.component";
 const routes: Routes = [
   { path: "", component: ArtistSearchComponent },
   { path: "artist/:id", component: ArtistInfoComponent },
+  { path: "search/:searchTerm", component: ArtistSearchComponent },
   { path: "**", component: ArtistSearchComponent }
 ];
 
