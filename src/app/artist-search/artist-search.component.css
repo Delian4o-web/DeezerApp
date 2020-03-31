@@ -9,11 +9,18 @@ body {
 
 .card-deck .card {
   margin: 0 0 1rem;
+  border: 0px white;
 }
 
 img {
   border-radius: 6%;
 }
+
+h4,
+p {
+  text-align: center;
+}
+
 
 @media (min-width: 576px) and (max-width: 767.98px) {
   .card-deck .card {
