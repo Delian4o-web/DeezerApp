@@ -132,3 +132,9 @@ body {
     table-layout: fixed;
   }
 }
+
+@media only screen and (max-width: 600px)  {
+  .navbar {
+    width: 100%;
+  }
+}
