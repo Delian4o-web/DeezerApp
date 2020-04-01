@@ -1,6 +1,6 @@
 {
-  "name": "Deezer App",
-  "short_name": "Deezer App",
+  "name": "deezerapp",
+  "short_name": "deezerapp",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",
@@ -28,8 +28,7 @@
     {
       "src": "assets/icons/icon-144x144.png",
       "sizes": "144x144",
-      "type": "image/png",
-      "purpose": "maskable"
+      "type": "image/png"
     },
     {
       "src": "assets/icons/icon-152x152.png",
