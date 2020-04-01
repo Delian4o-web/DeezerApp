@@ -13,6 +13,11 @@ body {
   margin: 0 0 1rem;
 }
 
+#artist-name {
+  text-shadow: 0px 15px 5px rgba(0, 0, 0, 0.1),
+    10px 20px 5px rgba(0, 0, 0, 0.05), -10px 20px 5px rgba(0, 0, 0, 0.05);
+}
+
 .ct {
   position: relative;
   max-width: 800px;
@@ -44,6 +49,8 @@ body {
   background-size: 100%;
   filter: grayscale(100%);
   color: white;
+  border-radius: 15px;
+  -moz-border-radius: 15px;
 }
 
 .tracksInfo {
