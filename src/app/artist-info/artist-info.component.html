@@ -8,9 +8,10 @@
 <div class="container">
   <button (click)="goBack()" class="btn"><i class="fa fa-home"></i> Home</button
   ><br /><br />
+
   <div class="row">
     <div
-      class="col-sm-6  artistInfo"
+      class="col-sm-8  artistInfo"
       style="background-image: url({{ artist.picture_xl }});"
     >
       <ng-container *ngIf="artist">
@@ -21,7 +22,7 @@
       </ng-container>
     </div>
 
-    <div class="col-sm-6 tracksInfo" style="border: 1px solid white">
+    <div class="col-sm-4 tracksInfo" style="border: 1px solid white">
       <h1 class="display-2">Top Tracks</h1>
       <br />
       <ng-container *ngIf="tracks">
