@@ -15,7 +15,7 @@ import { debounceTime, distinctUntilChanged, switchMap } from "rxjs/operators";
 })
 export class ArtistSearchComponent implements OnInit {
   artists: Artist[] = [];
-  rndNumber = randomInt(3, 1000);
+  rndNumber = randomInt(21, 3000);
   artists$: Observable<Artist[]>;
   private searchTerms = new Subject<string>();
   searchText;
