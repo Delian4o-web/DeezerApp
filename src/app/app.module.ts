@@ -11,6 +11,7 @@ import { RouterModule } from "@angular/router";
 import { environment } from "../environments/environment";
 import { ThousandSuffPipe } from "../app/pipes/thousand-suff.pipe";
 import { MinuteSecondsPipe } from "../app/pipes/minute-seconds.pipe";
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { MinuteSecondsPipe } from "../app/pipes/minute-seconds.pipe";
     ThousandSuffPipe,
     MinuteSecondsPipe
   ],
-  imports: [BrowserModule, HttpClientModule, AppRoutingModule],
+  imports: [BrowserModule, HttpClientModule, AppRoutingModule, ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })],
   providers: [],
   bootstrap: [AppComponent]
 })
