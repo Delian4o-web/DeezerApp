@@ -6,7 +6,12 @@ import { randomInt } from "../utils/random-num";
 import { ActivatedRoute } from "@angular/router";
 import { ThousandSuffPipe } from "../pipes/thousand-suff.pipe";
 import { Observable, Subject } from "rxjs";
-import { debounceTime, distinctUntilChanged, switchMap } from "rxjs/operators";
+import {
+  debounceTime,
+  distinctUntilChanged,
+  switchMap,
+  count
+} from "rxjs/operators";
 
 @Component({
   selector: "app-artist-search",
@@ -16,6 +21,7 @@ import { debounceTime, distinctUntilChanged, switchMap } from "rxjs/operators";
 export class ArtistSearchComponent implements OnInit {
   artists: Artist[] = [];
   rndNumber = randomInt(21, 3000);
+  artistCount: number;
   artists$: Observable<Artist[]>;
   private searchTerms = new Subject<string>();
   searchText;
@@ -35,6 +41,7 @@ export class ArtistSearchComponent implements OnInit {
       this.artistService.getArtists(artistNo).subscribe(x => {
         this.artists.push(x);
       });
+      console.log(artistNo);
     }
 
     this.artists$ = this.searchTerms.pipe(

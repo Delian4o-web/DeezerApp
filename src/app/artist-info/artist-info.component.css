@@ -44,7 +44,6 @@ body {
 }
 
 .artistInfo {
-  border: 3px solid #17a2b8;
   background-repeat: no-repeat;
   background-size: 100%;
   filter: grayscale(100%);
