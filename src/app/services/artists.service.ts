@@ -17,14 +17,6 @@ export class ArtistsService {
     return this.http.get<Artist>(`${environment.apiUri}/artist/${query}`);
   }
 
-  // getArtists(min: number, top: number): Observable<Artist[]> {
-  //   return range(min, top).pipe(
-  //     map(x => this.getArtist(x)),
-  //     mergeAll(),
-  //     toArray()
-  //   );
-  // }
-
   searchArtists(term?: string): Observable<Artist[]> {
     return this.http
       .get<any>(`${environment.apiUri}/search/artist?q=${term}`)
