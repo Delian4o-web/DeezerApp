@@ -11,20 +11,7 @@ import { Artists } from "../models/artists";
   styleUrls: ["./header.component.css"]
 })
 export class HeaderComponent implements OnInit {
-  artists$: Observable<Artist[]>;
-  private searchTerms = new Subject<string>();
-  searchText;
-  constructor(private artistService: ArtistsService) {}
+  constructor() {}
 
-  search(term: string): void {
-    this.searchTerms.next(term);
-  }
-
-  ngOnInit(): void {
-    this.artists$ = this.searchTerms.pipe(
-      debounceTime(100),
-      distinctUntilChanged(),
-      switchMap((term: string) => this.artistService.searchArtists(term))
-    );
-  }
+  ngOnInit(): void {}
 }
