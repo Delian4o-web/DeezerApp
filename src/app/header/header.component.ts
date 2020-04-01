@@ -1,9 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
-import { Observable, Subject } from "rxjs";
-import { debounceTime, distinctUntilChanged, switchMap } from "rxjs/operators";
-import { Artist } from "../models/artist";
-import { ArtistsService } from "../services/artists.service";
-import { Artists } from "../models/artists";
+import { Component, OnInit } from "@angular/core";
 
 @Component({
   selector: "app-header",
