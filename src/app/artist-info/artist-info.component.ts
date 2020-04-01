@@ -3,7 +3,6 @@ import { Artist } from "../models/artist";
 import { ActivatedRoute } from "@angular/router";
 import { ArtistsService } from "../services/artists.service";
 import { Artists } from "../models/artists";
-import { Tracklist } from "../models/tracklist";
 import { TracklistService } from "../services/tracklist.service";
 import { Track } from "../models/track";
 import { Albums } from "../models/albums";
