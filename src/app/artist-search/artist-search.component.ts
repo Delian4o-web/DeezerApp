@@ -21,7 +21,6 @@ import {
 export class ArtistSearchComponent implements OnInit {
   artists: Artist[] = [];
   rndNumber = randomInt(21, 3000);
-  artistCount: number;
   artists$: Observable<Artist[]>;
   private searchTerms = new Subject<string>();
   searchText;
@@ -41,7 +40,6 @@ export class ArtistSearchComponent implements OnInit {
       this.artistService.getArtists(artistNo).subscribe(x => {
         this.artists.push(x);
       });
-      console.log(artistNo);
     }
 
     this.artists$ = this.searchTerms.pipe(
