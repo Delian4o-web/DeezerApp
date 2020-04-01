@@ -22,7 +22,6 @@ import { Location } from "@angular/common";
 export class ArtistInfoComponent implements OnInit {
   artistId: number;
   artist: Artist;
-  tracklist: Tracklist;
   tracks: Track[];
   albums: Albums;
   albumlist: Album[] = new Array();
@@ -44,7 +43,6 @@ export class ArtistInfoComponent implements OnInit {
 
     this.tracklistService.getTrackList(this.artistId).subscribe(x => {
       this.tracks = x;
-      console.log(this.tracks);
     });
 
     this.albumService.getAlbumlist(this.artistId).subscribe(x => {
