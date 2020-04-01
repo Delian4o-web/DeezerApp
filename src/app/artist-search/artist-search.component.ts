@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { ArtistsService } from "../services/artists.service";
 import { Artists } from "../models/artists";
 import { Artist } from "../models/artist";
-import { randomInt } from "./randomNum";
+import { randomInt } from "../utils/random-num";
 import { ActivatedRoute } from "@angular/router";
 import { ThousandSuffPipe } from "../pipes/thousand-suff.pipe";
 import { Observable, Subject } from "rxjs";
