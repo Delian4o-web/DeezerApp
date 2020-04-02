@@ -14,7 +14,7 @@ import { MinuteSecondsPipe } from "../app/pipes/minute-seconds.pipe";
 import { SearchBarComponent } from "./artist-search/search-bar/search-bar.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 import { ServiceWorkerModule } from "@angular/service-worker";
-import { LoadingComponent } from './loading/loading.component';
+import { LoadingComponent } from "./loading/loading.component";
 
 @NgModule({
   declarations: [
