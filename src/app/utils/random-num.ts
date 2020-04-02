@@ -1,5 +1,5 @@
 export function randomInt(min, max): number {
-  let isGreater: boolean = false;
+  let isGreater = false;
 
   if (min > 20) {
     isGreater = true;
