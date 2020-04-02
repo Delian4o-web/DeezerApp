@@ -13,7 +13,7 @@ import { ThousandSuffPipe } from "../app/pipes/thousand-suff.pipe";
 import { MinuteSecondsPipe } from "../app/pipes/minute-seconds.pipe";
 import { SearchBarComponent } from "./artist-search/search-bar/search-bar.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
-import { ServiceWorkerModule } from '@angular/service-worker';
+import { ServiceWorkerModule } from "@angular/service-worker";
 
 @NgModule({
   declarations: [
@@ -26,7 +26,14 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     SearchBarComponent,
     PageNotFoundComponent
   ],
-  imports: [BrowserModule, HttpClientModule, AppRoutingModule, ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule,
+    ServiceWorkerModule.register("ngsw-worker.js", {
+      enabled: environment.production
+    })
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
