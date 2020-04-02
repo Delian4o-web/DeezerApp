@@ -5,34 +5,7 @@
   crossorigin="anonymous"
 />
 
-<form class="mx-2 my-auto d-inline w-100">
-  <input
-    type="text"
-    class="form-control border border-right-5 inputSearch "
-    placeholder="Search for an artist..."
-    #searchBox
-    id="search-box"
-    (input)="search(searchBox.value)"
-  />
-</form>
-
-<div class="search-artists">
-  <div *ngFor="let artist of artists$ | async">
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">
-        <img
-          class="img-fluid img-rounded searchImage"
-          src="{{ artist.picture_small }}"
-          alt=""
-          routerLink="/artist/{{ artist.id }}"
-        />
-        <a routerLink="/artist/{{ artist.id }}" class="search-artist-name">
-          {{ artist.name }}
-        </a>
-      </li>
-    </ul>
-  </div>
-</div>
+<app-search-bar></app-search-bar>
 
 <div class="container">
   <div class="card-deck">
