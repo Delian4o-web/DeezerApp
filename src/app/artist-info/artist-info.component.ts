@@ -24,6 +24,7 @@ export class ArtistInfoComponent implements OnInit {
   tracks: Track[];
   albums: Albums;
   albumlist: Album[] = new Array();
+  loading = true;
 
   constructor(
     private actRoute: ActivatedRoute,
@@ -38,6 +39,7 @@ export class ArtistInfoComponent implements OnInit {
   ngOnInit(): void {
     this.artistService.getArtists(this.artistId).subscribe(x => {
       this.artist = x;
+      this.loading = false;
     });
 
     this.tracklistService.getTrackList(this.artistId).subscribe(x => {

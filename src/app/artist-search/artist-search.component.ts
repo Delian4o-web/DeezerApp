@@ -20,6 +20,7 @@ import {
 })
 export class ArtistSearchComponent implements OnInit {
   artists: Artist[] = [];
+  loading = true;
   rndNumber = randomInt(21, 3000) - 20;
 
   constructor(private artistService: ArtistsService) {}
@@ -32,6 +33,7 @@ export class ArtistSearchComponent implements OnInit {
     ) {
       this.artistService.getArtists(artistNo).subscribe(x => {
         this.artists.push(x);
+        this.loading = false;
       });
     }
   }

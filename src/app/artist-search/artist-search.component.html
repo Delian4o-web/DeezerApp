@@ -5,28 +5,33 @@
   crossorigin="anonymous"
 />
 
-<app-search-bar></app-search-bar>
+<div *ngIf="loading; else loaded">
+  <app-loading></app-loading>
+</div>
 
 <div class="container">
-  <div class="card-deck">
-    <div class="card" *ngFor="let artist of artists">
-      <a [routerLink]="['/artist/', artist.id]">
-        <img
-          class="card-img-top"
-          src="{{ artist.picture_medium }}"
-          alt="Card image cap"
-        />
-      </a>
-      <div class="card-body">
-        <h5 class="card-title">
-          <a [routerLink]="['/artist/', artist.id]"
-            ><h4 class="card-title">{{ artist.name }}</h4></a
-          >
-        </h5>
-        <p class="card-text">
-          Number of fans : {{ artist.nb_fan | thousandSuff }}
-        </p>
+  <ng-template #loaded>
+    <app-search-bar></app-search-bar>
+    <div class="card-deck">
+      <div class="card" *ngFor="let artist of artists">
+        <a [routerLink]="['/artist/', artist.id]">
+          <img
+            class="card-img-top"
+            src="{{ artist.picture_medium }}"
+            alt="Card image cap"
+          />
+        </a>
+        <div class="card-body">
+          <h5 class="card-title">
+            <a [routerLink]="['/artist/', artist.id]"
+              ><h4 class="card-title">{{ artist.name }}</h4></a
+            >
+          </h5>
+          <p class="card-text">
+            Number of fans : {{ artist.nb_fan | thousandSuff }}
+          </p>
+        </div>
       </div>
     </div>
-  </div>
+  </ng-template>
 </div>
