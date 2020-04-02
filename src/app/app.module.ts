@@ -30,7 +30,7 @@ import { PageNotFoundComponent } from "./page-not-found/page-not-found.component
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    ServiceWorkerModule.register("ngsw-worker.js", {
+    ServiceWorkerModule.register("/ngsw-worker.js", {
       enabled: environment.production
     })
   ],
