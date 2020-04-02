@@ -20,7 +20,7 @@ import {
 })
 export class ArtistSearchComponent implements OnInit {
   artists: Artist[] = [];
-  rndNumber = randomInt(21, 3000);
+  rndNumber = randomInt(21, 3000) - 20;
   artists$: Observable<Artist[]>;
   private searchTerms = new Subject<string>();
   searchText;
@@ -33,8 +33,8 @@ export class ArtistSearchComponent implements OnInit {
 
   ngOnInit(): void {
     for (
-      let artistNo = this.rndNumber - 20;
-      artistNo <= this.rndNumber;
+      let artistNo = this.rndNumber;
+      artistNo <= this.rndNumber + 20;
       artistNo++
     ) {
       this.artistService.getArtists(artistNo).subscribe(x => {
