@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400");
+
+$primary-font: "Roboto";
+$primary-btn-color: #17a2b8;
+$hover-color: #0e606d;
+
+body {
+  font-size: 100%;
+  line-height: 1.5;
+  font-family: $primary-font, sans-serif;
+}
+
+p {
+  font-size: 2em;
+  text-align: center;
+  font-weight: 100;
+}
+
+h1 {
+  text-align: center;
+  font-size: 15em;
+  font-weight: 100;
+}
+
+.btn {
+  position: absolute;
+  left: 45%;
+  background-color: $primary-btn-color;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: $hover-color;
+}
