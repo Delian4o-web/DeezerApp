@@ -21,15 +21,8 @@ import {
 export class ArtistSearchComponent implements OnInit {
   artists: Artist[] = [];
   rndNumber = randomInt(21, 3000) - 20;
-  artists$: Observable<Artist[]>;
-  private searchTerms = new Subject<string>();
-  searchText;
 
   constructor(private artistService: ArtistsService) {}
-
-  search(term: string): void {
-    this.searchTerms.next(term);
-  }
 
   ngOnInit(): void {
     for (
@@ -41,11 +34,5 @@ export class ArtistSearchComponent implements OnInit {
         this.artists.push(x);
       });
     }
-
-    this.artists$ = this.searchTerms.pipe(
-      debounceTime(100),
-      distinctUntilChanged(),
-      switchMap((term: string) => this.artistService.searchArtists(term))
-    );
   }
 }
