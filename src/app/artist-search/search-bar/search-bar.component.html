@@ -25,9 +25,9 @@
 </main>
 <br />
 
-<div class="search-artists">
+<div class="search-artistsr">
   <div *ngFor="let artist of artists$ | async">
-    <ul class="list-group list-group-flush">
+    <ul class="list-group">
       <li class="list-group-item">
         <img
           class="img-fluid img-rounded searchImage"
@@ -36,9 +36,10 @@
           routerLink="/artist/{{ artist.id }}"
         />
         <a routerLink="/artist/{{ artist.id }}" class="search-artist-name">
-          {{ artist.name }}
+          {{ artist.name }} | {{ artist.nb_fan | thousandSuff }} fans
         </a>
       </li>
     </ul>
   </div>
 </div>
+<br /><br />

@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { ArtistsService } from "src/app/services/artists.service";
 import { Subject, Observable } from "rxjs";
 import { Artist } from "src/app/models/artist";
+import { Pipe, PipeTransform } from "@angular/core";
+import { ThousandSuffPipe } from "../../pipes/thousand-suff.pipe";
 import {
   debounceTime,
   distinctUntilChanged,
