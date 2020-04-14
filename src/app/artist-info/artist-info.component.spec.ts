@@ -8,7 +8,7 @@ describe("ArtistInfoComponent", () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ArtistInfoComponent]
+      declarations: [ArtistInfoComponent],
     }).compileComponents();
   }));
 
@@ -16,9 +16,5 @@ describe("ArtistInfoComponent", () => {
     fixture = TestBed.createComponent(ArtistInfoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
-
-  it("should create", () => {
-    expect(component).toBeTruthy();
   });
 });

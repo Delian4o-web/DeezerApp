@@ -8,18 +8,13 @@ describe("SearchBarComponent", () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SearchBarComponent ]
-    })
-    .compileComponents();
+      declarations: [SearchBarComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(SearchBarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
-
-  it("should create", () => {
-    expect(component).toBeTruthy();
   });
 });

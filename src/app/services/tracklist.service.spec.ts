@@ -9,8 +9,4 @@ describe('TracklistService', () => {
     TestBed.configureTestingModule({});
     service = TestBed.inject(TracklistService);
   });
-
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
 });

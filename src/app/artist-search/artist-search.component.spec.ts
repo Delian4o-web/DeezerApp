@@ -8,7 +8,7 @@ describe("ArtistSearchComponent", () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ArtistSearchComponent]
+      declarations: [ArtistSearchComponent],
     }).compileComponents();
   }));
 
@@ -16,9 +16,5 @@ describe("ArtistSearchComponent", () => {
     fixture = TestBed.createComponent(ArtistSearchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
-
-  it("should create", () => {
-    expect(component).toBeTruthy();
   });
 });

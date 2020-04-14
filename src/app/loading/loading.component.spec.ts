@@ -8,7 +8,7 @@ describe("LoadingComponent", () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [LoadingComponent]
+      declarations: [LoadingComponent],
     }).compileComponents();
   }));
 
@@ -16,9 +16,5 @@ describe("LoadingComponent", () => {
     fixture = TestBed.createComponent(LoadingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
-
-  it("should create", () => {
-    expect(component).toBeTruthy();
   });
 });
