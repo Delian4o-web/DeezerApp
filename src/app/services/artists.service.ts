@@ -8,7 +8,7 @@ import { tap, catchError, map, mergeAll, toArray } from "rxjs/operators";
 import { Artists } from "../models/artists";
 
 @Injectable({
-  providedIn: "root"
+  providedIn: "root",
 })
 export class ArtistsService {
   constructor(private http: HttpClient) {}
@@ -20,6 +20,6 @@ export class ArtistsService {
   searchArtists(term?: string): Observable<Artist[]> {
     return this.http
       .get<any>(`${environment.apiUri}/search/artist?q=${term}`)
-      .pipe(map(x => x.data));
+      .pipe(map((x) => x.data));
   }
 }

@@ -5,7 +5,7 @@ import { environment } from "src/environments/environment";
 import { Albums } from "../models/albums";
 
 @Injectable({
-  providedIn: "root"
+  providedIn: "root",
 })
 export class AlbumService {
   constructor(private http: HttpClient) {}

@@ -6,7 +6,7 @@ import { Track } from "../models/track";
 import { map } from "rxjs/operators";
 
 @Injectable({
-  providedIn: "root"
+  providedIn: "root",
 })
 export class TracklistService {
   constructor(private http: HttpClient) {}
@@ -14,6 +14,6 @@ export class TracklistService {
   getTrackList(artistID?: number): Observable<Track[]> {
     return this.http
       .get<any>(`${environment.apiUri}/artist/${artistID}/top?limit=5`)
-      .pipe(map(x => x.data));
+      .pipe(map((x) => x.data));
   }
 }
