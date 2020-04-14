@@ -1,0 +1,45 @@
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:400,700"
+  rel="stylesheet"
+/>
+<link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+/>
+
+<main>
+  <div class="SearchBox">
+    <input
+      type="text"
+      class="SearchBox-input"
+      placeholder="Search for an artist..."
+      #searchBox
+      id="search-box"
+      (input)="search(searchBox.value)"
+    />
+
+    <button class="SearchBox-button">
+      <i class="SearchBox-icon  material-icons">search</i>
+    </button>
+  </div>
+</main>
+<br />
+
+<div class="search-artistsr">
+  <div *ngFor="let artist of artists$ | async">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <img
+          class="img-fluid img-rounded searchImage"
+          src="{{ artist.picture_small }}"
+          alt=""
+          routerLink="/artist/{{ artist.id }}"
+        />
+        <a routerLink="/artist/{{ artist.id }}" class="search-artist-name">
+          {{ artist.name }} | {{ artist.nb_fan | thousandSuff }} fans
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<br /><br />

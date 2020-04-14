@@ -1,0 +1,78 @@
+<link
+  rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+  crossorigin="anonymous"
+/>
+
+<div *ngIf="loading; else loaded">
+  <app-loading></app-loading>
+</div>
+
+<ng-template #loaded>
+  <button (click)="goBack()" class="btn"><i class="fa fa-home"></i> Home</button
+  ><br /><br /><br />
+  <div class="container">
+    <div class="row">
+      <div
+        class="col-sm-8  artistInfo"
+        style="background-image: url({{ artist.picture_xl }});"
+      >
+        <ng-container *ngIf="artist">
+          <h1 class="display-2" id="artist-name">{{ artist.name }}</h1>
+          <u
+            ><h3 class="display-5">
+              {{ artist.nb_fan | thousandSuff }} fans
+            </h3></u
+          >
+        </ng-container>
+      </div>
+
+      <div class="col-sm-4 tracksInfo">
+        <h1 class="display-2">Top Tracks</h1>
+        <br />
+        <ng-container *ngIf="tracks">
+          <div *ngFor="let track of tracks">
+            <ol class="list-group list-group-flush">
+              <li class="list-group-item">
+                <h4>
+                  {{ track.title_short }}
+                  {{ track.duration | minuteSeconds }}
+                </h4>
+              </li>
+            </ol>
+          </div>
+          <br />
+        </ng-container>
+      </div>
+    </div>
+    <br /><br />
+
+    <div class="container">
+      <h1 class="display-3">Albums</h1>
+      <hr />
+      <br />
+      <div class="card-deck" *ngIf="albumlist">
+        <div class="card" *ngFor="let album of albumlist">
+          <a>
+            <img
+              class="card-img-top"
+              src="{{ album.cover_medium }}"
+              alt="Card image cap"
+            />
+          </a>
+          <div class="card-body">
+            <h5 class="card-title">
+              <a>
+                <h4 class="card-title">
+                  {{ album.title }}
+                </h4>
+              </a>
+            </h5>
+            <p class="card-text">{{ album.release_date | date: "yyyy" }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

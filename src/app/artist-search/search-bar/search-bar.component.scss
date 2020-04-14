@@ -1,0 +1,88 @@
+$primaryColor: #00bcd4;
+$accent-color: #f50057;
+$text-color: #263238;
+$body-color: #80deea;
+$main-font: "roboto";
+$font-bold: 700;
+$font-regular: 400;
+$height: 4em;
+
+body {
+  color: $text-color;
+  background-color: $body-color;
+  font-family: $main-font, Arial;
+  font-weight: $font-regular;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-weight: $font-bold;
+}
+
+input,
+button {
+  border: none;
+  background: none;
+  outline: 0;
+}
+
+.SearchBox-input::placeholder {
+  color: white;
+  opacity: 0.6;
+}
+
+.SearchBox {
+  $height: 4em;
+  display: flex;
+
+  border-radius: $height;
+  background-color: $primaryColor;
+  height: $height;
+}
+
+.SearchBox:hover .SearchBox-input {
+  padding-left: 2em;
+  padding-right: 1em;
+  width: 240px;
+}
+
+.SearchBox-input {
+  width: 0;
+  font-size: 1.2em;
+  color: #fff;
+  transition: 0.45s;
+}
+
+.SearchBox-button {
+  display: flex;
+  border-radius: 50%;
+  width: $height;
+  height: $height;
+  background-color: $accent-color;
+  transition: 0.3s;
+}
+
+.SearchBox-button:active {
+  transform: scale(0.85);
+}
+.SearchBox-icon {
+  margin: auto;
+  color: #fff;
+}
+
+.search-artist-name {
+  color: black;
+  font-size: 20px;
+}
+
+@media screen and (min-width: 400px) {
+  .SearchBox:hover .SearchBox-input {
+    width: 400px;
+  }
+}

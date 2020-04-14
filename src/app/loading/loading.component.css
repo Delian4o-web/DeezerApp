@@ -1,0 +1,13 @@
+.wrapper {
+  position: absolute;
+  left: 45%;
+  top: 45%;
+}
+
+@media only screen and (max-width: 600px) {
+  .wrapper {
+    position: absolute;
+    left: 33%;
+    top: 35%;
+  }
+}

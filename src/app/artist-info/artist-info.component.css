@@ -1,0 +1,80 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap-responsive.css);
+
+body {
+  padding-top: 20px;
+}
+
+.card-deck {
+  margin: 0 -15px;
+  justify-content: space-between;
+}
+
+.card-deck .card {
+  margin: 0 0 1rem;
+}
+
+.btn {
+  background-color: #17a2b8;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.artistInfo {
+  background-repeat: no-repeat;
+  background-size: 100%;
+  filter: grayscale(100%);
+  color: white;
+  border-radius: 15px;
+  -moz-border-radius: 15px;
+}
+
+.tracksInfo {
+  text-align: center;
+  border: 1px solid white;
+}
+
+.btn:hover {
+  background-color: #0e606d;
+}
+
+@media only screen and (max-width: 600px) {
+  #artist-name {
+    font-size: 50px;
+  }
+
+  .btn {
+    left: 0%;
+  }
+
+  .artistInfo {
+    height: 400px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .card-deck .card {
+    -ms-flex: 0 0 48.7%;
+    flex: 0 0 48.7%;
+  }
+
+  .tracksInfo > h4 {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .card-deck .card {
+    -ms-flex: 0 0 32%;
+    flex: 0 0 32%;
+  }
+}
+
+@media (min-width: 992px) {
+  .card-deck .card {
+    -ms-flex: 0 0 24%;
+    flex: 0 0 24%;
+  }
+}
