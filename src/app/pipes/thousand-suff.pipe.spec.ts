@@ -1,8 +1,14 @@
 import { ThousandSuffPipe } from "./thousand-suff.pipe";
 
 describe("ThousandSuffPipe", () => {
-  it("create an instance", () => {
-    const pipe = new ThousandSuffPipe();
-    expect(pipe).toBeTruthy();
+  let pipe: ThousandSuffPipe;
+
+  beforeEach(() => {
+    pipe = new ThousandSuffPipe();
+  });
+
+  it("should return the same input if input < 1000", () => {
+    const input = 900;
+    expect(pipe.transform(input)).toEqual(input);
   });
 });
