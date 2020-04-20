@@ -1,8 +1,8 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed } from "@angular/core/testing";
 
-import { TracklistService } from './tracklist.service';
+import { TracklistService } from "./tracklist.service";
 
-describe('TracklistService', () => {
+describe("TracklistService", () => {
   let service: TracklistService;
 
   beforeEach(() => {
