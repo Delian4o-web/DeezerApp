@@ -33,7 +33,5 @@ export class SearchBarComponent implements OnInit {
       distinctUntilChanged(),
       switchMap((term: string) => this.artistService.searchArtists(term))
     );
-
-    
   }
 }

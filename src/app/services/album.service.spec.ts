@@ -8,7 +8,7 @@ import { environment } from "src/environments/environment";
 import { AlbumService } from "./album.service";
 
 describe("AlbumService", () => {
-  let albumService: AlbumService;
+  let albumServices: AlbumService;
   let httpMock: HttpTestingController;
 
   beforeEach(() => {
@@ -17,14 +17,14 @@ describe("AlbumService", () => {
       providers: [AlbumService],
     });
 
-    albumService = TestBed.inject(AlbumService);
+    albumServices = TestBed.inject(AlbumService);
     httpMock = TestBed.inject(HttpTestingController);
   });
 
   it("should fetch albums as an observable", async(
     inject(
       [HttpTestingController, AlbumService],
-      (httpClient: HttpTestingController, albumService: AlbumService) => {
+      (httpClient: HttpTestingController, albumServices: AlbumService) => {
         const albumItem = [
           {
             id: "6575789",
@@ -49,7 +49,7 @@ describe("AlbumService", () => {
           },
         ];
 
-        albumService.getAlbumlist(27).subscribe((albums: any) => {
+        albumServices.getAlbumlist(27).subscribe((albums: any) => {
           expect(albums.length).toBe(1);
         });
 
