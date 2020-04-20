@@ -17,8 +17,8 @@ describe("AlbumService", () => {
       providers: [AlbumService],
     });
 
-    albumService = TestBed.get(AlbumService);
-    httpMock = TestBed.get(HttpTestingController);
+    albumService = TestBed.inject(AlbumService);
+    httpMock = TestBed.inject(HttpTestingController);
   });
 
   it("should fetch albums as an observable", async(
@@ -53,7 +53,9 @@ describe("AlbumService", () => {
           expect(albums.length).toBe(1);
         });
 
-        let req = httpMock.expectOne(`${environment.apiUri}/artist/27/albums`);
+        const req = httpMock.expectOne(
+          `${environment.apiUri}/artist/27/albums`
+        );
         expect(req.request.method).toBe("GET");
 
         req.flush(albumItem);
